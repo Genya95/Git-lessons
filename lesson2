@@ -1,0 +1,38 @@
+package ru.geekbrains.lesson2;
+
+public class SecondApp {
+    public static void main(String[] args) {
+        between10and20('a','b');
+        checkNumber();
+        isNegative('a');
+        printWordNTimes ("v");
+    }
+
+    public static boolean between10and20(int a, int b) {
+        int c = a + b;
+        if (c >= 10 && c <= 20) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public static void checkNumber() {
+        int n = -10;
+        if (n > 0) {
+            System.out.println("Положительное");
+        } else {
+            System.out.println("Отрицательное");
+        }
+    }
+    public static boolean isNegative(int a) {
+        if (a>0) {
+            return true;
+        } else {
+            return false;}
+        }
+    public static void printWordNTimes(String args ) {
+        for (int v =5; v <= 10; v++) {
+            System.out.println("Hello");
+        }
+    }
+}
