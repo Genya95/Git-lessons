@@ -1,0 +1,18 @@
+package ru.geekbrains.lesson5;
+
+public  class homework4 {
+    public static void main(String[] args) {
+        employee[] employee = new employee[5];
+        employee[0] = new employee("Петров Станислав Иванович", "Бухгалтер", "petrov@gmail.ru", "89169161616", 68000, 30);
+        employee[1] = new employee("Сидоров Артем Николаевич", "Сантехник", "Sidor15@gmail.ru", "89168917716", 30000, 43);
+        employee[2] = new employee("Игнатов Игнат Игнатович", "Электрик", "ignat54@gmail.ru", "89069161564", 43000, 50);
+        employee[3] = new employee("Морозова Елена Сергеевна", "Директор", "moRozova@gmail.ru", "89165047031", 120000, 35);
+        employee[4] = new employee("Козлова Ирина Петровна", "Заместитель директора", "kozlova21@gmail.ru", "89779165168", 90000, 29);
+
+        for (ru.geekbrains.lesson5.employee value : employee) {
+            if (value.getAge() > 40) {
+                value.info();
+            }
+        }
+    }
+}
