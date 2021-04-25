@@ -1,0 +1,20 @@
+package ru.geekbrains.lesson6;
+
+public class Animal {
+    public int runDistance;
+    public int swimDistance;
+    public Animal() {
+
+    }
+    public Animal  (int runDistance, int swimDistance) {
+    this.runDistance = runDistance;
+    this.swimDistance = swimDistance;
+    }
+
+    public void runInfo() {
+           System.out.println("Животное пробежало " + runDistance);
+        }
+    public void swimInfo() {
+        System.out.println("Животное проплыло " + swimDistance);
+    }
+    }
