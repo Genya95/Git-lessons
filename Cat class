@@ -1,0 +1,26 @@
+package ru.geekbrains.lesson6;
+
+public class Cat extends Animal {
+    String name;
+    int age;
+
+    @Override
+    public void runInfo() {
+        System.out.println(name + " " + "пробежала" + " " + runDistance + " "+ "метров");
+    }
+
+    @Override
+    public void swimInfo() {
+        System.out.println("Коты не умеют плавать!");
+    }
+
+    public Cat(String name, int age, int runDistance, int swimDistance) {
+        super(runDistance, swimDistance);
+        this.name = name;
+        if (runDistance > 200) {
+            System.out.println("Ошибка! Коты могут пробежать не более 200 метров!");
+        } else {
+            runInfo();
+        }
+    }
+}

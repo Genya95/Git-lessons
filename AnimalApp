@@ -1,0 +1,21 @@
+package ru.geekbrains.lesson6;
+
+public class AnimalApp {
+    public static void main(String[] args) {
+        Cat cat1 = new Cat("Penka", 2, 30, 15);
+        Cat cat2 = new Cat("Bobic", 5, 300, 20);
+        Cat cat3 = new Cat("Pushok", 1, 60, 10);
+        Cat cat4 = new Cat("Masyana", 6, 75, 70);
+        cat1.runInfo();
+        cat1.swimInfo();
+        Dog dog1 = new Dog("Bars", 10, 500, 15);
+        Dog dog2 = new Dog("Inga", 3, 20, 60);
+        Dog dog3 = new Dog("Kioto", 15, 200, 5);
+        Dog dog4 = new Dog("Tokio", 7, 90, 9);
+        Dog dog5 = new Dog("Pakun", 10, 400, 8);
+        dog1.swimInfo();
+        dog1.runInfo();
+
+        }
+
+        }
