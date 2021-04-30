@@ -1,0 +1,34 @@
+package ru.geekbrains.lesson7;
+
+public class MainClass {
+    public static void main(String[] args) {
+        Cat[] cat = new Cat[6];
+        cat[0] = new Cat("Barsik", 105, false);
+        cat[1] = new Cat("Bobik", 105, false);
+        cat[2] = new Cat("Pushok", 50, false);
+        cat[3] = new Cat("Ben", 100, false);
+        cat[4] = new Cat("Penka", 20, false);
+        cat[5] = new Cat("Masana", 55, false);
+        Plate plate = new Plate(300);
+        plate.info();
+        for (Cat i : cat) {
+            if (!i.getFullness()) {
+                if (plate.getFood() >= i.getAppetite()) {
+                    i.eat(plate);
+                    System.out.println("Кот " + i.getName() + " " + "поел");
+                    plate.info();
+                } else {
+                    System.out.println("Коту " + i.getName() + " " + "не хватает еды, досыпьте корма!");
+                    plate.addFood(300);
+                    System.out.println("Досыпали корма");
+                    i.eat(plate);
+                    System.out.println("Кот " + i.getName() + " " + "поел");
+                    plate.info();
+                }
+            } else {
+                System.out.println("Кот не хочет есть");
+            }
+
+        }
+    }
+}
