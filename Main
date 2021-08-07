@@ -1,0 +1,61 @@
+package ru.gb.lesson1;
+
+import com.sun.tools.javac.Main;
+
+public class MainApp {
+    public static void main(String[] args) {
+        Human human = new Human();
+        Cat cat = new Cat();
+        Robot robot = new Robot();
+        human.runHuman();
+        Team team1 = new Team(35, 16, 150, 60, 50, 17);
+        int[] wall = new int[3];
+        wall[0] = 15;
+        wall[1] = 20;
+        wall[2] = 30;
+        int[] track = {30, 40, 50};
+        for (int i = 0; i < wall.length; i++) {
+            if (wall[i] <= team1.humanJump) {
+                System.out.println("Препятствие стена с высотой " + wall[i] + " пройдено.");
+            } else {
+                System.out.println("Препятствие стена с высотой " + wall[i] + " не пройдено. Дальнейшее участие не возможно.");
+                break;
+            }
+        }
+        cat.runCat();
+        for (int i = 0; i < wall.length; i++) {
+            if (wall[i] <= team1.catJump) {
+                System.out.println("Препятствие стена с высотой " + wall[i] + " пройдено.");
+            } else {
+                System.out.println("Препятствие стена с высотой " + wall[i] + " не пройдено. Дальнейшее участие не возможно.");
+                break;
+            }
+        }
+        robot.runRobot();
+        for (int i = 0; i < wall.length; i++) {
+            if (wall[i] <= team1.robotJump) {
+                System.out.println("Препятствие стена с высотой " + wall[i] + " пройдено.");
+            } else {
+                System.out.println("Препятствие стена с высотой " + wall[i] + " не пройдено. Дальнейшее участие не возможно.");
+                break;
+
+            }
+        }
+        System.out.println("Приступаем к беговой дорожке.");
+        for (int k = 0; k < track.length; k++) {
+                if (wall[k] > team1.humanJump ) {
+                    human.runHuman();
+                    if(track[k] <= team1.humanRun){
+                     System.out.println("Дистанция длиной " + track[k] + " пройдена");
+                        } else {
+                            System.out.println("Дистанция длиной " + track[k] + " не пройдена. Дальнейшее участие не возможно.");
+                            break;
+                        }
+                } else {
+                    System.out.println("Участник не может принимать участие в этом состязании, не пройдено предыдущее испытание.");
+                }
+
+
+        }
+    }
+}
