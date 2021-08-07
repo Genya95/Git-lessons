@@ -1,0 +1,8 @@
+package ru.gb.lesson1;
+
+public class Track {
+    public int lenght;
+    public Track(int lenght){
+        this.lenght = lenght;
+    }
+}
