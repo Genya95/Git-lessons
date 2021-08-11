@@ -1,0 +1,53 @@
+package lessin2;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public void massive(String[][] a) throws MyArraySizeException, MyArrayDataException {
+        int sum = 0;
+        if (a.length != 4) {
+            throw new MyArraySizeException("Неверный размер массива!");
+        }
+        for (String[] strings : a) {
+            for (String string : strings) {
+                try {
+                    sum += sum + Integer.parseInt(string);
+                } catch (NumberFormatException e) {
+                    throw new MyArrayDataException("Нужно вводить числа!");
+                } catch (ArrayIndexOutOfBoundsException e) {
+                    throw new MyArraySizeException("Неверный размер массива!");
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+
+        String[][] normal = {
+                {"1", "2", "3", "4"},
+                {"4", "3", "2", "1"},
+                {"3", "3", "3", "3"},
+                {"5", "5", "5", "5"}
+        };
+        String[][] incorrect = {
+                {"1", "2", "3", "4"},
+                {"4", "3", "2", "1"},
+                {"3", "3", "3", "3"}
+        };
+        String[][] incorrect1 = {
+                {"1", "2", "3", "4"},
+                {"4", "3", "2", "1", "5", "6", "7"},
+                {"3", "3", "3", "3"},
+                {"5", "5", "5", "5"}
+        };
+        String[][] incorrectData = {
+                {"1", "2", "op", "4"},
+                {"4", "3", "2", "1", "5", "6", "7"},
+                {"3", "3", "3", "p"},
+                {"5", "5", "5", "5"}
+        };
+
+
+    }
+}
