@@ -1,0 +1,22 @@
+package lesson3;
+
+public class Box {
+    int fruit;
+    int number;
+
+
+    public void box( int fruit, int number) {
+        this.number = number;
+        this.fruit = fruit;
+
+    }
+
+
+    public void getWeight(){
+        System.out.println("Вес коробки равен: " + number*fruit);
+    }
+
+    public boolean compare (Box  another) {
+        return true;
+    }
+}
