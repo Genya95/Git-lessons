@@ -1,0 +1,33 @@
+package lesson4;
+
+
+import java.util.*;
+
+public class Phonebook {
+    String name;
+    String phone;
+
+    public Phonebook(String name, String phone) {
+        this.phone = phone;
+        this.name = name;
+        addPhones(name, phone);
+
+
+    }
+    public static HashMap<String, String> addPhones(String names, String phones) {
+        HashMap<String, String> phonebook = new HashMap<>();
+        String[] name = {names};
+        String[] phone = {phones};
+        for (int i = 0; i < name.length; i++) {
+            for (int j = 0; j < phone.length; j++) {
+                if (phonebook != null) {
+                    phonebook.put(name[i], phone[j]);
+                }
+            }
+
+            System.out.println(names + " : " + phonebook.values());
+        }
+        return phonebook;
+
+    }
+}
