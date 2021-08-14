@@ -1,0 +1,43 @@
+package lesson4;
+
+import java.util.*;
+
+public class Main {
+
+        public static void main(String[] args){
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("кошка");
+        arrayList.add("олень");
+        arrayList.add("лошадь");
+        arrayList.add("собака");
+        arrayList.add("енот");
+        arrayList.add("кошка");
+        arrayList.add("петух");
+        arrayList.add("олень");
+        arrayList.add("кошка");
+        arrayList.add("лягушка");
+        arrayList.add("волк");
+        arrayList.add("сова");
+        arrayList.add("кролик");
+        arrayList.add("сова");
+        arrayList.add("лось");
+        arrayList.add("свинья");
+        arrayList.add("бегемот");
+        arrayList.add("енот");
+        arrayList.add("енот");
+        arrayList.add("мышь");
+        String[] arr = new String[arrayList.size()];
+        arrayList.toArray(arr);
+        System.out.println("Начальный список: " + arrayList);
+        Set<String> set = new HashSet<>(arrayList);
+        System.out.println("Уникальные слова: " + set.toString());
+        Phonebook pb = new Phonebook("Alekseev", "89166593326");
+        Phonebook pb1 = new Phonebook("Ivanov", "89063263356");
+        Phonebook pb2 = new Phonebook("Egorova", "89023162548");
+        Phonebook pb3 = new Phonebook("Semenova", "89169558462");
+        Phonebook pb4 = new Phonebook("Petrova", "89132653232");
+
+
+        }
+
+        }
