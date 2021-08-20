@@ -1,0 +1,27 @@
+package lesson5;
+
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) {
+        byte[] appData = null;
+        try (ByteArrayOutputStream out = new ByteArrayOutputStream();
+             ObjectOutputStream objectOutputStream = new ObjectOutputStream(out);
+             FileOutputStream outputStream = new FileOutputStream("src/main/java/lesson5/demo.csv")) {
+            AppData apData = new AppData(new String[]{"Value 1;Value 2;Value 3"}, new int[][]{{100, 200, 300}, {400, 500, 600}});
+            objectOutputStream.writeObject(apData);
+            appData = out.toByteArray();
+            outputStream.write(appData);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try (ByteArrayInputStream barrIn = new ByteArrayInputStream(appData);
+             ObjectInputStream objIn = new ObjectInputStream(barrIn)) {
+            AppData apIn = (AppData) objIn.readObject();
+            System.out.println("Исходные данные: " + apIn);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+}
