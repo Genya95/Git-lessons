@@ -1,0 +1,7 @@
+package ru.gb.lesson1;
+
+public class Robot {
+    public void runRobot(){
+        System.out.println("Робот побежал");
+    }
+}

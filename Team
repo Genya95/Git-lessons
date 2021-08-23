@@ -1,0 +1,22 @@
+package ru.gb.lesson1;
+
+public class Team {
+    public int humanRun;
+    public int robotRun;
+    public int catRun;
+    public int humanJump;
+    public int robotJump;
+    public int catJump;
+    public Team(int humanRun, int humanJump, int robotRun,int robotJump, int catRun, int catJump){
+        this.humanRun = humanRun;
+        this.humanJump = humanJump;
+        this.catRun = catRun;
+        this.catJump = catJump;
+        this.robotRun = robotRun;
+        this.robotJump = robotJump;
+
+    }
+    public void teamInfo(){
+        System.out.println("Характеристики команды: ");
+    }
+}
