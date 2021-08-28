@@ -1,0 +1,53 @@
+package lesson7;
+
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import okhttp3.HttpUrl;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
+;
+
+public class HomeWork {
+    public static final String HOST = "dataservice.accuweather.com";
+    public static final String ALARMS_URL = "forecasts";
+    public static final String VERSION = "v1";
+    public static final String DAILY = "daily";
+    public static final String FIVE_DAYS_URL = "5day";
+    public static final String CITY_ID = "295212";
+    public static final String API_KEY = "LGralaGkialhov0WVJSM8QSXgA2QLMHU";
+
+
+    public static void main(String[] args) throws Exception {
+        OkHttpClient client = new OkHttpClient();
+        HttpUrl url = new HttpUrl.Builder()
+                .scheme("https")
+                .host(HOST)
+                .addPathSegment(ALARMS_URL)
+                .addPathSegment(VERSION)
+                .addPathSegment(DAILY)
+                .addPathSegment(FIVE_DAYS_URL)
+                .addPathSegment(CITY_ID)
+                .addQueryParameter("apikey", API_KEY)
+                .build();
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+        Response response = client.newCall(request).execute();
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        WeatherResponse weatherResponse = objectMapper.readValue(response.body().byteStream(), WeatherResponse.class);
+        for (DailyForecasts dailyForecasts : weatherResponse.getDailyForecasts()) {
+            System.out.printf(
+                    "Погода в Санкт-Петербурге на %s " + " %s , температура от %.1f %.1f %s\n",
+                    dailyForecasts.getDate(),
+                    dailyForecasts.getDay().getIconPhrase(),
+                    dailyForecasts.getTemperature().getMinimum().getValue(),
+                    dailyForecasts.getTemperature().getMaximum().getValue(),
+                    dailyForecasts.getTemperature().getMinimum().getUnit()
+            );
+        }
+    }
+
+    }
